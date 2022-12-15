@@ -1,0 +1,44 @@
+{
+    "name": "ocr-sportsee-frontend",
+    "description": "Develop a Dashboard for Analytics with React - OpenClassRooms project",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "5.0.1"
+    },
+    "devDependencies": {
+        "@mulekick/eslint-config-muleslint": "^1.0.1",
+        "sass": "^1.56.2"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "live": "docker container run --rm -d --mount type=bind,source=$(realpath build),target=/content,ro=true -p 8080:80 mulekick/serve-static:latest > /tmp/static-container-id",
+        "die": "docker container stop $(cat /tmp/static-container-id) && rm /tmp/static-container-id"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "engines": {
+        "node": ">=16.16.0",
+        "npm": ">=8.15.1"
+    },
+    "author": "mulekick <moolekick@gmail.com> (https://github.com/mulekick)",
+    "license": "MIT",
+    "repository": {},
+    "bugs": {}
+}
