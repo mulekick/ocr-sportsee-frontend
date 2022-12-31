@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+// default font
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+// wrapper mixin
+@mixin wrapper-default {
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+// horizontal charts wrapper
+.horizontal-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 275px;
+    width: 895px;
+}
+
+// bar chart wrapper div
+.bar-wrapper {
+    @include wrapper-default;
+    background-color: #fbfbfb;
+    margin: 10px 0;
+
+    // bar chart tooltip layout
+    .tooltip {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+// line chart wrapper div
+.line-wrapper {
+    @include wrapper-default;
+    background-color: red;
+    color: lightgrey;
+    font-size: 15px;
+}
+
+// radar chart wrapper div
+.radar-wrapper {
+    @include wrapper-default;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+}
+
+// radial chart wrapper div
+.radial-wrapper {
+    @include wrapper-default;
+    background-color: #fbfbfb;
+
+    // overlayed div layout
+    .overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: grey;
+        font-size: 15px;
+    }
+}

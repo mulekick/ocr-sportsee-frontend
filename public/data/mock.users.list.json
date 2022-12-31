@@ -1,5 +1,6 @@
 [
     {
+        "___WTF" : "why not simply naming this key userId for consistency ?",
         "id": 12,
         "userInfos": {
             "firstName": "Karl",
@@ -21,6 +22,7 @@
             "lastName": "Ratorez",
             "age": 34
         },
+        "___WTF" : "why not simply naming this key todayScore for consistency ?",
         "score": 0.3,
         "keyData": {
             "calorieCount": 2500,

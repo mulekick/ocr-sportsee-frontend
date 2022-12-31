@@ -1,12 +1,18 @@
+// import modules
 import React from "react";
-// eslint-disable-next-line node/file-extension-in-import
+// eslint-disable-next-line
 import ReactDOM from "react-dom/client";
-import SomeApp from "./App.js";
+
+// import app
+import SportSee from "./app.jsx";
+
+// import styles
+import "./scss/main.scss";
 
 ReactDOM
     .createRoot(document.getElementById(`root`))
     .render(
         <React.StrictMode>
-            <SomeApp />
+            <SportSee user={ 18 } />
         </React.StrictMode>
     );
