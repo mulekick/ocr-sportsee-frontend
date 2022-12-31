@@ -35,15 +35,19 @@ const
         }, [ props.user ]);
 
         // container div styling
-        return <div>
-            {/* // condition component rendering on data being available */}
-            {activity ? <BarShart data={ activity.format() } height={260} width={875} /> : null}
-            <div className="horizontal-wrapper">
-                {sessions ? <LineShart data={ sessions.format() } height={260} width={260} /> : null}
-                {performance ? <RadarShart data={ performance.format() } height={260} width={260} /> : null}
-                {profile ? <RadialBarShart data={ profile.format()} height={260} width={260} /> : null}
+        return <>
+            <div>bonjour</div>
+            <div>
+                {/* // condition component rendering on data being available */}
+                {activity ? <BarShart data={ activity.format() } height={250} width={668} /> : null}
+                <div className="horizontal-wrapper">
+                    {sessions ? <LineShart data={ sessions.format() } height={200} width={200} /> : null}
+                    {performance ? <RadarShart data={ performance.format() } height={200} width={200} /> : null}
+                    {profile ? <RadialBarShart data={ profile.format()} height={200} width={200} /> : null}
+                </div>
             </div>
-        </div>;
+            <div>vignettes</div>
+        </>;
     };
 
 // define prop types ...

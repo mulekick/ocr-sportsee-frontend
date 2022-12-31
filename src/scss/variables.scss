@@ -1,0 +1,25 @@
+@charset "utf-8";
+// import Roboto from google font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+// ================ SCSS VARIABLES ==================
+
+// default box-sizing
+$box_sizing: border-box;
+
+// default padding
+$padding_default: 10px;
+
+// default radius
+$radius_default: 10px;
+
+// background and font color
+$color_background: #ffffff;
+$color_background_charts: #fbfbfb;
+$color_font_primary: #000000;
+$color_font_secondary: #ffffff;
+
+// fonts size
+$font_large: 36px;
+$font_medium: 18px;
+$font_small: 12px;

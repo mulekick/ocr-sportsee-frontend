@@ -1,71 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@charset "utf-8";
+@import "mixins";
 
-// default font
-* {
-    font-family: "Roboto", sans-serif;
+body {
+    width: 1024px;
+    height: 780px;
+    // remove default margin
+    margin: 0 calc((100% - 1024px) / 2);
 }
 
-// wrapper mixin
-@mixin wrapper-default {
-    height: fit-content;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 10px;
+/* ========== GENERAL STYLES ========== */
+
+header {
+    // content layout management
+    @include flex($direction: row, $align: center, $justify: space-between);
+    @include box($padding: 10px 100px 10px 10px, $backcolor: #000000, $radius: 0px);
+
+    img {
+        width: 180px;
+        height: 60px;
+    }
+
+    a {
+        @include span($color: $color_font_secondary);
+        // style overrides
+        text-decoration: none;
+        // pseudo styles
+        &:hover, &:active {
+            text-decoration: underline;
+        }
+    }
 }
+
+main {
+    // content layout management
+    @include flex($direction: row);
+    @include box($height: 700px, $padding: unset, $backcolor: unset, $radius: 0px);
+}
+
+div.container {
+    // content layout management
+    @include flex($align: center, $justify: center);
+    @include box($backcolor: unset, $radius: 0px);
+}
+
+div.left {
+    // content layout management
+    @include flex($align: center, $justify: space-around);
+    @include box($width: 80px, $height: 700px, $padding: unset, $backcolor: #000000, $radius: 0px);
+
+    ul {
+        // style overrides
+        list-style-type: none;
+        padding-left: 0;
+
+        > li {
+            // style overrides
+            margin-bottom: 10px;
+
+            div {                
+                // content layout management
+                @include flex($align: center, $justify: center);
+                @include box($width: 54px, $height: 54px);
+            }
+
+        }
+    }
+
+    > span {    
+        @include span($size: $font_small, $weight: 300, $color: $color_font_secondary);
+        transform: rotate(-90deg);
+        width: max-content;
+    }
+}
+
+div.content {
+    // content layout management
+    @include flex($direction: row);
+    // style overrides
+    flex-wrap: wrap;
+    // content layout management
+    @include box($width: calc(100% - 80px), $height: 700px, $padding: unset, $radius: 0px);
+    // style overrides
+    * {
+        font-family: "Roboto", sans-serif;
+        font-size: $font_small;
+    }
+
+    // greetings
+    > div:nth-of-type(1) {
+        // content layout management
+        @include box($width: 100%, $height: 25%, $padding: unset, $backcolor: orange, $radius: 0px);
+    }
+
+    // charts
+    > div:nth-of-type(2) {
+        // content layout management
+        @include box($width: 75%, $height: 75%, $radius: 0px);
+    }
+
+    // indicators
+    > div:nth-of-type(3) {
+        @include box($width: 25%, $height: 75%, $padding: unset, $backcolor: yellow, $radius: 0px);
+    }
+
+}
+
+/* ========== CHARTS STYLES =========== */
 
 // horizontal charts wrapper
-.horizontal-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 275px;
-    width: 895px;
+div.horizontal-wrapper {
+    // content layout management
+    @include flex($direction: row, $align: center, $justify: space-between);
+    @include box($width: 688px, $height: 225px, $padding: unset);
+    // style overrides
+    margin-top: 10px;
 }
 
 // bar chart wrapper div
-.bar-wrapper {
-    @include wrapper-default;
-    background-color: #fbfbfb;
-    margin: 10px 0;
+div.bar-wrapper {
+    // content layout management
+    @include box($width: fit-content, $height: fit-content, $backcolor: $color_background_charts);
 
     // bar chart tooltip layout
     .tooltip {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        // content layout management
+        @include flex($justify: center);
     }
 }
 
 // line chart wrapper div
-.line-wrapper {
-    @include wrapper-default;
-    background-color: red;
+div.line-wrapper {
+    // content layout management
+    @include box($width: fit-content, $height: 100%, $backcolor: red);
+    // style overrides
     color: lightgrey;
     font-size: 15px;
 }
 
 // radar chart wrapper div
-.radar-wrapper {
-    @include wrapper-default;
-    background-color: black;
+div.radar-wrapper {
+    // content layout management
+    @include box($width: fit-content, $height: 100%, $backcolor: black);
+    // style overrides
     color: white;
     font-size: 12px;
 }
 
 // radial chart wrapper div
-.radial-wrapper {
-    @include wrapper-default;
-    background-color: #fbfbfb;
+div.radial-wrapper {
+    // content layout management
+    @include box($width: fit-content, $height: 100%, $backcolor: $color_background_charts);
 
     // overlayed div layout
     .overlay {
+        // content layout management
+        @include flex($justify: center);
+        // style overrides
         position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         color: grey;
         font-size: 15px;
     }

@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import "variables";
+
+// ================ SCSS MIXINS ==================
+
+// centered even flex layout
+@mixin flex($direction: column, $align: center, $justify: space-around) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// rounded or square boxes
+@mixin box($width: initial, $height: initial, $padding: $padding_default, $backcolor: $color_background, $radius: $radius_default) {
+    width: $width;
+    height: $height;
+    padding: $padding;
+    background-color: $backcolor;
+    border-radius: $radius;
+    // static box sizing
+    box-sizing: $box_sizing;
+}
+
+// spans and h's
+@mixin span($margin: 5px 0 5px 0, $size: $font_medium, $weight: 500, $color: $color_font_primary) {
+    margin: $margin;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    font-family: "Roboto", sans-serif;
+}
