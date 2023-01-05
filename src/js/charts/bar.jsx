@@ -30,7 +30,7 @@ const
                 {/* declare dedicated Y axis for weight and calories and restrict the kilogram values domain so the variations are visible ... */}
                 <YAxis yAxisId={0} dataKey="kilogram" domain={[ `dataMin - 2.5`, `dataMax + 2.5` ]} orientation="right" tickLine={false} />
                 <YAxis yAxisId={1} dataKey="calories" orientation="left" tickLine={false} />
-                <Tooltip content={<XToolTip />} wrapperStyle={{padding: `10px`, "background-color": `red`, color: `white`}} />
+                <Tooltip content={<XToolTip />} wrapperStyle={{padding: `10px`, backgroundColor: `red`, color: `white`}} />
                 {/* bind each bar to their specific Y axis ID ... */}
                 <Bar yAxisId={0} barSize={7.5} dataKey="kilogram" fill="#000000" />
                 <Bar yAxisId={1} barSize={7.5} dataKey="calories" fill="#ff0000" />

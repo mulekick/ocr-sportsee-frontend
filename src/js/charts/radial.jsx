@@ -13,12 +13,12 @@ const
             {/* overlayed div styling */}
             <div className="overlay" style={{height: `${ height }px`, width: `${ width }px`}}>
                 <span style={{position: `absolute`, top: `10px`, left: `10px`}}><strong>Score</strong></span>
-                <span style={{color: `black`, "font-size": `24px`}}><strong>{ data.at(1).percentage }%</strong></span>
+                <span style={{color: `black`, fontSize: `24px`}}><strong>{ data.at(1).percentage }%</strong></span>
                 <span>de votre</span>
                 <span>objectif</span>
             </div>
             <RadialBarChart height={height} width={width} style={{transform: `rotate(0.75turn)`}} cx="50%" cy="50%" innerRadius="65%" outerRadius="100%" barSize={15} data={data}>
-                <RadialBar background={false} clockWise dataKey="percentage" />
+                <RadialBar background={false} clockWise dataKey="percentage" cornerRadius={15}/>
             </RadialBarChart>
         </div>;
     };

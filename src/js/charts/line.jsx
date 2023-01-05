@@ -24,7 +24,7 @@ const
             <span style={{position: `absolute`}}><strong>Durée moyenne des<br />sessions</strong></span>
             <LineChart height={height} width={width} data={data} margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                 <XAxis stroke="lightgrey" dataKey="day" axisLine={false} tickLine={false} />
-                <Tooltip content={<XToolTip />} wrapperStyle={{padding: `10px`, "background-color": `lightgrey`, color: `black`}} />
+                <Tooltip content={<XToolTip />} wrapperStyle={{padding: `10px`, backgroundColor: `lightgrey`, color: `black`}} />
                 <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" strokeWidth={3} dot={false} />
             </LineChart>
         </div>;

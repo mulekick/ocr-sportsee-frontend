@@ -43,6 +43,12 @@ div.container {
     @include box($backcolor: unset, $radius: 0px);
 }
 
+div.thumbnail {                
+    // content layout management
+    @include flex($align: center, $justify: center);
+    @include box($width: 54px, $height: 54px);
+}
+
 div.left {
     // content layout management
     @include flex($align: center, $justify: space-around);
@@ -56,13 +62,6 @@ div.left {
         > li {
             // style overrides
             margin-bottom: 10px;
-
-            div {                
-                // content layout management
-                @include flex($align: center, $justify: center);
-                @include box($width: 54px, $height: 54px);
-            }
-
         }
     }
 
@@ -89,7 +88,23 @@ div.content {
     // greetings
     > div:nth-of-type(1) {
         // content layout management
-        @include box($width: 100%, $height: 25%, $padding: unset, $backcolor: orange, $radius: 0px);
+        @include flex($align: flex-start, $justify: center);
+        @include box($width: 100%, $height: 25%, $radius: 0px);
+        
+        * {
+            @include span($margin: unset, $size: $font_large, $weight: 500);
+        }
+
+        span {
+            // style overrides
+            color: red;
+        }
+
+        h4 {
+            // style overrides
+            font-size: 15px;
+            font-weight: 300;
+        }
     }
 
     // charts
@@ -98,9 +113,35 @@ div.content {
         @include box($width: 75%, $height: 75%, $radius: 0px);
     }
 
-    // indicators
+    // stats
     > div:nth-of-type(3) {
-        @include box($width: 25%, $height: 75%, $padding: unset, $backcolor: yellow, $radius: 0px);
+        @include box($width: 25%, $height: 75%, $padding: unset, $radius: 0px);
+
+        ul {
+            // content layout management
+            @include flex($justify: space-between);
+            @include box($height: 100%, $padding: 10px, $radius: 0px);
+            // style overrides
+            margin: 0;
+            list-style-type: none;
+    
+            > li {
+                // content layout management
+                @include flex($direction: row, $justify: flex-start);
+                @include box($width: 100%, $padding: 17.5px, $backcolor: $color_background_secondary);
+
+                > div:nth-of-type(2) {
+                    // style overrides
+                    margin-left: 17.5px;
+                    > span:nth-of-type(1) {
+                        @include span();
+                    }
+                    > span:nth-of-type(2) {
+                        @include span($size: $font_small, $weight: 300, $color: grey);
+                    }
+                }
+            }
+        }
     }
 
 }
@@ -119,7 +160,7 @@ div.horizontal-wrapper {
 // bar chart wrapper div
 div.bar-wrapper {
     // content layout management
-    @include box($width: fit-content, $height: fit-content, $backcolor: $color_background_charts);
+    @include box($width: fit-content, $height: fit-content, $backcolor: $color_background_secondary);
 
     // bar chart tooltip layout
     .tooltip {
@@ -149,7 +190,7 @@ div.radar-wrapper {
 // radial chart wrapper div
 div.radial-wrapper {
     // content layout management
-    @include box($width: fit-content, $height: 100%, $backcolor: $color_background_charts);
+    @include box($width: fit-content, $height: 100%, $backcolor: $color_background_secondary);
 
     // overlayed div layout
     .overlay {

@@ -73,23 +73,38 @@ const
         constructor(d) {
             const
                 // destructure data and account for inconsistencies
-                {id, todayScore, score} = d;
+                {id, userInfos: {firstName}, todayScore, score, keyData} = d;
             // flatten data for consumption by components
+            this.firstName = firstName;
             this.score = todayScore || score;
+            this.keyData = keyData;
         }
 
         // data formatting method (recharts expects the SVG fill as part of the data ...)
-        format() {
-            return [ {
-                name: `remainder`,
-                percentage: 1e2 - (this.score * 1e2),
-                // resorting to lame tricks such as this ...
-                fill: `#fbfbfb`
-            }, {
-                name: `percentage of objective completed`,
-                percentage: this.score * 1e2,
-                fill: `#ff0000`
-            } ];
+        format(f) {
+            switch (f) {
+            case `hello` :
+                return {
+                    firstName: this.firstName
+                };
+            case `stats` :
+                return {
+                    keyData: this.keyData
+                };
+            case `radial` :
+                return [ {
+                    name: `remainder`,
+                    percentage: 1e2 - (this.score * 1e2),
+                    // resorting to lame tricks such as this ...
+                    fill: `#fbfbfb`
+                }, {
+                    name: `percentage of objective completed`,
+                    percentage: this.score * 1e2,
+                    fill: `#ff0000`
+                } ];
+            default :
+                throw new Error(`invalid format`);
+            }
         }
     };
 

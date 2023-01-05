@@ -9,7 +9,7 @@ const
             {bg, src, alt} = props;
 
         // wrapper div styling
-        return <div style={{backgroundColor: bg}}>
+        return <div className="thumbnail" style={{backgroundColor: bg}}>
             <img src={ src } alt={ alt } />
         </div>;
     };

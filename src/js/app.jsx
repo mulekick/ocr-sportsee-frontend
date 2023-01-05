@@ -4,6 +4,9 @@
 import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 
+import Hello from "./components/hello.jsx";
+import Stats from "./components/stats.jsx";
+
 import BarShart from "./charts/bar.jsx";
 import LineShart from "./charts/line.jsx";
 import RadarShart from "./charts/radar.jsx";
@@ -36,17 +39,18 @@ const
 
         // container div styling
         return <>
-            <div>bonjour</div>
+            {/* condition props value so as to avoid the flashing effect on load */}
+            <Hello data={ profile ? profile.format(`hello`) : {firstName: ``}} />
             <div>
                 {/* // condition component rendering on data being available */}
                 {activity ? <BarShart data={ activity.format() } height={250} width={668} /> : null}
                 <div className="horizontal-wrapper">
                     {sessions ? <LineShart data={ sessions.format() } height={200} width={200} /> : null}
                     {performance ? <RadarShart data={ performance.format() } height={200} width={200} /> : null}
-                    {profile ? <RadialBarShart data={ profile.format()} height={200} width={200} /> : null}
+                    {profile ? <RadialBarShart data={ profile.format(`radial`)} height={200} width={200} /> : null}
                 </div>
             </div>
-            <div>vignettes</div>
+            <Stats data={ profile ? profile.format(`stats`) : {keyData: {}}} />
         </>;
     };
 
