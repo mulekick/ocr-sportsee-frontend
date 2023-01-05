@@ -1,9 +1,14 @@
+/**
+ * module that exports the user performance chart component
+ * @module components/performance
+ */
+
 import PropTypes from "prop-types";
 import {ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis} from "recharts";
 
 const
     // radar chart hook-based component
-    RadarShart = props => {
+    UserPerformanceChart = props => {
         const
             // destructure props
             {data, height, width} = props;
@@ -19,7 +24,7 @@ const
     };
 
 // define prop types ...
-RadarShart.propTypes = {
+UserPerformanceChart.propTypes = {
     // data : array of object shapes required
     data: PropTypes.arrayOf(PropTypes.shape({
         // kind : string required
@@ -32,4 +37,4 @@ RadarShart.propTypes = {
     width: PropTypes.string.isRequired
 };
 
-export default RadarShart;
+export default UserPerformanceChart;

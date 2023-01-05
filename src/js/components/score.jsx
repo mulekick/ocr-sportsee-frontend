@@ -1,9 +1,14 @@
+/**
+ * module that exports the user score chart component
+ * @module components/score
+ */
+
 import PropTypes from "prop-types";
 import {ResponsiveContainer, RadialBarChart, RadialBar} from "recharts";
 
 const
     // radial chart overlay hook-based component
-    RadialOverlay = props => {
+    UserScoreOverlay = props => {
         const
             // destructure props
             {percentage, height, width} = props;
@@ -16,7 +21,7 @@ const
         </div>;
     },
     // radial chart hook-based component
-    RadialBarShart = props => {
+    UserScoreChart = props => {
         const
             // destructure props
             {data, height, width} = props;
@@ -31,7 +36,7 @@ const
 
 
 // define prop types ...
-RadialOverlay.propTypes = {
+UserScoreOverlay.propTypes = {
     // percentage : number required
     percentage: PropTypes.number.isRequired,
     // height / width : number required
@@ -40,7 +45,7 @@ RadialOverlay.propTypes = {
 };
 
 // define prop types ...
-RadialBarShart.propTypes = {
+UserScoreChart.propTypes = {
     // data : array of object shapes required
     data: PropTypes.arrayOf(PropTypes.shape({
         // name / fill : string required
@@ -54,4 +59,4 @@ RadialBarShart.propTypes = {
     width: PropTypes.string.isRequired
 };
 
-export {RadialOverlay, RadialBarShart};
+export {UserScoreOverlay, UserScoreChart};

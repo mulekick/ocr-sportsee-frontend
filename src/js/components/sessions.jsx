@@ -1,3 +1,8 @@
+/**
+ * module that exports the user sessions chart component
+ * @module components/sessions
+ */
+
 import PropTypes from "prop-types";
 import {ResponsiveContainer, Legend, LineChart, Line, XAxis, YAxis, Tooltip} from "recharts";
 
@@ -25,7 +30,7 @@ const
         </span>;
     },
     // line chart hook-based component
-    LineShart = props => {
+    UserSessionsChart = props => {
         const
             // destructure props
             {data, height, width} = props;
@@ -52,7 +57,7 @@ XToolTip.propTypes = {
 };
 
 // define prop types ...
-LineShart.propTypes = {
+UserSessionsChart.propTypes = {
     // data : array of object shapes required
     data: PropTypes.arrayOf(PropTypes.shape({
         // day : string required
@@ -65,4 +70,4 @@ LineShart.propTypes = {
     width: PropTypes.string.isRequired
 };
 
-export default LineShart;
+export default UserSessionsChart;

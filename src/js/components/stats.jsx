@@ -1,3 +1,8 @@
+/**
+ * module that exports the user stats display component
+ * @module components/score
+ */
+
 // import modules
 import PropTypes from "prop-types";
 import Thumbnail from "./thumbnail.jsx";

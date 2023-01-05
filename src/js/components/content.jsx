@@ -7,10 +7,10 @@ import PropTypes from "prop-types";
 import Hello from "./hello.jsx";
 import Stats from "./stats.jsx";
 
-import BarShart from "./bar.jsx";
-import LineShart from "./line.jsx";
-import RadarShart from "./radar.jsx";
-import {RadialOverlay, RadialBarShart} from "./radial.jsx";
+import UserActivityChart from "./activity.jsx";
+import UserSessionsChart from "./sessions.jsx";
+import UserPerformanceChart from "./performance.jsx";
+import {UserScoreOverlay, UserScoreChart} from "./score.jsx";
 
 import {getUserData} from "../helpers/api.js";
 import {UserActivity, UserSessions, UserPerformance, UserProfile} from "../helpers/models.js";
@@ -43,13 +43,13 @@ const
             <Hello data={ profile ? profile.format(`hello`) : {firstName: ``}} />
             <div>
                 {/* // condition component rendering on data being available */}
-                {activity ? <BarShart data={ activity.format() } height={`48.75%`} width={`100%`} /> : null}
+                {activity ? <UserActivityChart data={ activity.format() } height={`48.75%`} width={`100%`} /> : null}
                 <div className="horizontal-wrapper">
-                    {sessions ? <LineShart data={ sessions.format() } height={`100%`} width={`32.25%`} /> : null}
-                    {performance ? <RadarShart data={ performance.format() } height={`100%`} width={`32.25%`} /> : null}
+                    {sessions ? <UserSessionsChart data={ sessions.format() } height={`100%`} width={`32.25%`} /> : null}
+                    {performance ? <UserPerformanceChart data={ performance.format() } height={`100%`} width={`32.25%`} /> : null}
                     {/* overlayed div styling */}
-                    {profile ? <RadialOverlay percentage={ profile.format(`radial`).at(1).percentage } height={`100%`} width={`32.25%`} /> : null}
-                    {profile ? <RadialBarShart data={ profile.format(`radial`)} height={`100%`} width={`32.25%`} /> : null}
+                    {profile ? <UserScoreOverlay percentage={ profile.format(`radial`).at(1).percentage } height={`100%`} width={`32.25%`} /> : null}
+                    {profile ? <UserScoreChart data={ profile.format(`radial`)} height={`100%`} width={`32.25%`} /> : null}
                 </div>
             </div>
             <Stats data={ profile ? profile.format(`stats`) : {keyData: {}}} />

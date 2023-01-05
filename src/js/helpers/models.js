@@ -1,7 +1,18 @@
+/**
+ * module that exports the data modelization classes
+ * @module helpers/models
+ */
+
 const
-    // user activity data model class
+    /**
+     * @name UserActivity
+     * @description class for modelization of the user activity API data
+     */
     UserActivity = class {
-        // constructor
+        /**
+         * @constructor
+         * @param {Object} d - data returned from the user activity API
+         */
         constructor(d) {
             const
                 // destructure data and account for inconsistencies
@@ -13,7 +24,11 @@ const
             this.sessions = sessions;
         }
 
-        // data formatting method
+        /**
+         * data formatting method
+         * @function format
+         * @return {Object} - an object ready for consumption by the component
+         */
         format() {
             return this.sessions.map((x, i) => ({
                 day: i + 1,
@@ -22,9 +37,15 @@ const
             }));
         }
     },
-    // user sessions data model class
+    /**
+     * @name UserSessions
+     * @description class for modelization of the user sessions API data
+     */
     UserSessions = class {
-        // constructor
+        /**
+         * @constructor
+         * @param {Object} d - data returned from the user sessions API
+         */
         constructor(d) {
             const
                 // destructure data and account for inconsistencies
@@ -36,7 +57,11 @@ const
             this.sessions = sessions;
         }
 
-        // data formatting method
+        /**
+         * data formatting method
+         * @function format
+         * @return {Object} - an object ready for consumption by the component
+         */
         format() {
             return this.sessions.map(x => ({
                 day: [ `L`, `M`, `M`, `J`, `V`, `S`, `D` ].at(x.day - 1),
@@ -44,9 +69,15 @@ const
             }));
         }
     },
-    // user performance data model class
+    /**
+     * @name UserPerformance
+     * @description class for modelization of the user performance API data
+     */
     UserPerformance = class {
-        // constructor
+        /**
+         * @constructor
+         * @param {Object} d - data returned from the user performance API
+         */
         constructor(d) {
             const
                 // destructure data and account for inconsistencies
@@ -59,7 +90,11 @@ const
             this.data = data;
         }
 
-        // data formatting method
+        /**
+         * data formatting method
+         * @function format
+         * @return {Object} - an object ready for consumption by the component
+         */
         format() {
             return this.data.map(x => ({
                 kind: this.kind[x.kind],
@@ -67,9 +102,15 @@ const
             }));
         }
     },
-    // user profile data model class
+    /**
+     * @name UserProfile
+     * @description class for modelization of the user profile API data
+     */
     UserProfile = class {
-        // constructor
+        /**
+         * @constructor
+         * @param {Object} d - data returned from the user profile API
+         */
         constructor(d) {
             const
                 // destructure data and account for inconsistencies
@@ -80,7 +121,12 @@ const
             this.keyData = keyData;
         }
 
-        // data formatting method (recharts expects the SVG fill as part of the data ...)
+        /**
+         * data formatting method (recharts expects the SVG fill as part of the data ...)
+         * @function format
+         * @param {string} f - the required format depending on the targeted component
+         * @return {Object} - an object ready for consumption by the component
+         */
         format(f) {
             switch (f) {
             case `hello` :

@@ -1,3 +1,8 @@
+/**
+ * module that exports the user activity chart component
+ * @module components/activity
+ */
+
 import PropTypes from "prop-types";
 import {ResponsiveContainer, Legend, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip} from "recharts";
 
@@ -33,7 +38,7 @@ const
             null;
     },
     // bar chart hook-based component
-    BarShart = props => {
+    UserActivityChart = props => {
         const
             // destructure props
             {data, height, width} = props;
@@ -66,7 +71,7 @@ XToolTip.propTypes = {
 };
 
 // define prop types ...
-BarShart.propTypes = {
+UserActivityChart.propTypes = {
     // data : array of object shapes required
     data: PropTypes.arrayOf(PropTypes.shape({
         // day / kilogram / calories : number required
@@ -79,4 +84,4 @@ BarShart.propTypes = {
     width: PropTypes.string.isRequired
 };
 
-export default BarShart;
+export default UserActivityChart;

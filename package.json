@@ -13,6 +13,7 @@
     },
     "devDependencies": {
         "@mulekick/eslint-config-muleslint": "^1.0.1",
+        "jsdoc": "^4.0.0",
         "sass": "^1.56.2"
     },
     "scripts": {
@@ -20,6 +21,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
+        "jsdoc": "npx jsdoc src -r -d docs",
         "live": "docker container run --rm -d --mount type=bind,source=$(realpath build),target=/content,ro=true -p 8080:80 mulekick/serve-static:latest > /tmp/static-container-id",
         "die": "docker container stop $(cat /tmp/static-container-id) && rm /tmp/static-container-id"
     },

@@ -1,14 +1,29 @@
-/* eslint-disable no-shadow */
+/**
+ * module that exports the data access API
+ * @module helpers/api
+ */
 
 const
-    // mock data files
+    /**
+     * @constant
+     * @name mocks
+     * @description mock data files
+     */
     mocks = {
         profile: `/data/mock.users.list.json`,
         activity: `/data/mock.users.activity.json`,
         sessions: `/data/mock.users.sessions.json`,
         performance: `/data/mock.users.performance.json`
     },
-    // dynamic data retrieval
+    /**
+     * dynamically retrieves user data using fetch
+     * @async
+     * @function getUserData
+     * @param {number} user - the user id
+     * @param {string} request - the requested data API
+     * @param {function} hydrate - the caller component state setting function
+     * @param {Object} UserDataModel - the data model class to instantiate
+     */
     getUserData = async(user, request, hydrate, UserDataModel) => {
         try {
             // throw if request is invalid ...

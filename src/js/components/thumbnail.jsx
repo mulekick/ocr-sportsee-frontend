@@ -1,3 +1,8 @@
+/**
+ * module that exports the thumbnail component
+ * @module components/score
+ */
+
 // import modules
 import PropTypes from "prop-types";
 
