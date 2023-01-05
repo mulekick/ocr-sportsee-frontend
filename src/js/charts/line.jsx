@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {LineChart, Line, XAxis, Tooltip} from "recharts";
+import {ResponsiveContainer, Legend, LineChart, Line, XAxis, Tooltip} from "recharts";
 
 const
     // x-axis tooltip hook-based component
@@ -12,6 +12,13 @@ const
             <div>{`${ payload.at(0).value } min`}</div> :
             null;
     },
+    // legend component
+    Duration = props => {
+        const {a} = props;
+        return <span>
+            <strong>Durée moyenne des<br />sessions</strong>
+        </span>;
+    },
     // sample hook-based stuff
     LineShart = props => {
         const
@@ -19,20 +26,19 @@ const
             {data, height, width} = props;
 
         // wrapper div styling
-        return <div className="line-wrapper">
-            {/* overlayed div styling */}
-            <span style={{position: `absolute`}}><strong>Durée moyenne des<br />sessions</strong></span>
-            <LineChart height={height} width={width} data={data} margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+        return <ResponsiveContainer className="line-wrapper" width={width} height={height}>
+            <LineChart data={data} margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                 <XAxis stroke="lightgrey" dataKey="day" axisLine={false} tickLine={false} />
                 <Tooltip content={<XToolTip />} wrapperStyle={{padding: `10px`, backgroundColor: `lightgrey`, color: `black`}} />
+                <Legend wrapperStyle={{top: `10px`, left: `10px`}} content={<Duration />} />
                 <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" strokeWidth={3} dot={false} />
             </LineChart>
-        </div>;
+        </ResponsiveContainer>;
     };
 
 // define prop types ...
 XToolTip.propTypes = {
-    // active : array of object shapes optional
+    // active : boolean optional
     active: PropTypes.bool,
     // payload : array of objects optional
     payload: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any))
@@ -48,8 +54,8 @@ LineShart.propTypes = {
         sessionLength: PropTypes.number.isRequired
     })).isRequired,
     // height / width : number required
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired
+    height: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired
 };
 
 export default LineShart;

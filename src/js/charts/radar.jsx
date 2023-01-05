@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {Radar, RadarChart, PolarGrid, PolarAngleAxis} from "recharts";
+import {ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis} from "recharts";
 
 const
     // sample hook-based radar chart
@@ -9,13 +9,13 @@ const
             {data, height, width} = props;
 
         // wrapper div styling
-        return <div className="radar-wrapper">
-            <RadarChart height={height} width={width} data={data} cx="50%" cy="50%" outerRadius="80%" margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+        return <ResponsiveContainer className="radar-wrapper" width={width} height={height}>
+            <RadarChart data={data} cx="50%" cy="50%" outerRadius="80%" margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="kind" />
                 <Radar name="Mike" dataKey="value" fill="#ff0000" fillOpacity={0.75} />
             </RadarChart>
-        </div>;
+        </ResponsiveContainer>;
     };
 
 // define prop types ...
@@ -28,8 +28,8 @@ RadarShart.propTypes = {
         value: PropTypes.number.isRequired
     })).isRequired,
     // height / width : number required
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired
+    height: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired
 };
 
 export default RadarShart;

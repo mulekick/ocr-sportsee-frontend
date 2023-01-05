@@ -1,7 +1,16 @@
 import PropTypes from "prop-types";
-import {RadialBarChart, RadialBar} from "recharts";
+import {ResponsiveContainer, Legend, RadialBarChart, RadialBar} from "recharts";
 
 const
+    // legend component
+    Score = props => {
+        const {percentage} = props;
+        return <div className="overlay">
+            <span style={{color: `black`, fontSize: `24px`}}><strong>{ percentage }%</strong></span>
+            <span>de votre</span>
+            <span>objectif</span>
+        </div>;
+    },
     // sample hook-based stuff
     RadialBarShart = props => {
         const
@@ -9,19 +18,20 @@ const
             {data, height, width} = props;
 
         // wrapper div styling
-        return <div className="radial-wrapper">
-            {/* overlayed div styling */}
-            <div className="overlay" style={{height: `${ height }px`, width: `${ width }px`}}>
-                <span style={{position: `absolute`, top: `10px`, left: `10px`}}><strong>Score</strong></span>
-                <span style={{color: `black`, fontSize: `24px`}}><strong>{ data.at(1).percentage }%</strong></span>
-                <span>de votre</span>
-                <span>objectif</span>
-            </div>
-            <RadialBarChart height={height} width={width} style={{transform: `rotate(0.75turn)`}} cx="50%" cy="50%" innerRadius="65%" outerRadius="100%" barSize={15} data={data}>
+        return <ResponsiveContainer className="radial-wrapper" width={width} height={height}>
+            <RadialBarChart cx="50%" cy="50%" innerRadius="65%" outerRadius="100%" barSize={15} data={data} startAngle={90} endAngle={450}>
+                <Legend wrapperStyle={{left: `37.5%`, top: `37.5%`}} content={<Score percentage={ data.at(1).percentage } />} />
                 <RadialBar background={false} clockWise dataKey="percentage" cornerRadius={15}/>
             </RadialBarChart>
-        </div>;
+        </ResponsiveContainer>;
     };
+
+
+// define prop types ...
+Score.propTypes = {
+    // percentage : number required
+    percentage: PropTypes.number.isRequired
+};
 
 // define prop types ...
 RadialBarShart.propTypes = {
@@ -34,8 +44,8 @@ RadialBarShart.propTypes = {
         percentage: PropTypes.number.isRequired
     })).isRequired,
     // height / width : number required
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired
+    height: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired
 };
 
 export default RadialBarShart;

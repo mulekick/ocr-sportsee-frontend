@@ -43,11 +43,11 @@ const
             <Hello data={ profile ? profile.format(`hello`) : {firstName: ``}} />
             <div>
                 {/* // condition component rendering on data being available */}
-                {activity ? <BarShart data={ activity.format() } height={250} width={668} /> : null}
+                {activity ? <BarShart data={ activity.format() } height={`50%`} width={`100%`} /> : null}
                 <div className="horizontal-wrapper">
-                    {sessions ? <LineShart data={ sessions.format() } height={200} width={200} /> : null}
-                    {performance ? <RadarShart data={ performance.format() } height={200} width={200} /> : null}
-                    {profile ? <RadialBarShart data={ profile.format(`radial`)} height={200} width={200} /> : null}
+                    {sessions ? <LineShart data={ sessions.format() } height={`100%`} width={`33%`} /> : null}
+                    {performance ? <RadarShart data={ performance.format() } height={`100%`} width={`33%`} /> : null}
+                    {profile ? <RadialBarShart data={ profile.format(`radial`)} height={`100%`} width={`33%`} /> : null}
                 </div>
             </div>
             <Stats data={ profile ? profile.format(`stats`) : {keyData: {}}} />

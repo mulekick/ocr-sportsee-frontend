@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip} from "recharts";
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip} from "recharts";
 
 const
     // x-axis tooltip hook-based component
@@ -23,8 +23,8 @@ const
             {data, height, width} = props;
 
         // wrapper div styling
-        return <div className="bar-wrapper">
-            <BarChart height={height} width={width} data={data} margin={{top: 5, right: 10, left: 10, bottom: 5}}>
+        return <ResponsiveContainer className="bar-wrapper" width={width} height={height}>
+            <BarChart data={data} margin={{top: 5, right: 10, left: 10, bottom: 5}}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="day" tickLine={false} />
                 {/* declare dedicated Y axis for weight and calories and restrict the kilogram values domain so the variations are visible ... */}
@@ -35,7 +35,7 @@ const
                 <Bar yAxisId={0} barSize={7.5} dataKey="kilogram" fill="#000000" />
                 <Bar yAxisId={1} barSize={7.5} dataKey="calories" fill="#ff0000" />
             </BarChart>
-        </div>;
+        </ResponsiveContainer>;
     };
 
 // define prop types ...
@@ -56,8 +56,8 @@ BarShart.propTypes = {
         calories: PropTypes.number.isRequired
     })).isRequired,
     // height / width : number required
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired
+    height: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired
 };
 
 export default BarShart;
