@@ -75,7 +75,7 @@ div.left {
 div.content {
     // content layout management
     @include flex($direction: row);
-    @include box($width: calc(100% - 80px), $height: 700px, $padding: unset, $radius: 0px);
+    @include box($width: calc(100% - 80px), $height: 700px, $padding: 09px 75px, $radius: 0px);
     // style overrides
     flex-wrap: wrap;
     
@@ -109,19 +109,20 @@ div.content {
     // charts
     > div:nth-of-type(2) {
         // content layout management
+        @include flex($justify: space-between);
         @include box($width: 75%, $height: 75%, $radius: 0px);
     }
 
     // stats
     > div:nth-of-type(3) {
-        @include box($width: 25%, $height: 75%, $padding: unset, $radius: 0px);
+        @include box($width: 25%, $height: 75%, $radius: 0px);
 
         ul {
             // content layout management
             @include flex($justify: space-between);
             @include box($height: 100%, $radius: 0px);
             // style overrides
-            padding-bottom: 0;
+            padding-top: 0;
             margin: 0;
             list-style-type: none;
     
@@ -151,7 +152,7 @@ div.content {
 // bar chart wrapper div
 div.bar-wrapper {
     // content layout management
-    @include box($backcolor: $color_background_secondary);
+    @include box($padding: 0px, $backcolor: $color_background_secondary);
 
     // bar chart tooltip layout
     .tooltip {
@@ -160,14 +161,34 @@ div.bar-wrapper {
     }
 }
 
+// radial overlayed div layout
+div.bar-header {
+    // content layout management
+    @include flex($direction: row, $justify: space-between);
+    @include box($padding: 15px 35px, $backcolor: $color_background_secondary);
+
+    .dot {
+        height: 7.5px;
+        width: 7.5px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    > div {
+        @include flex($direction: row, $justify: space-between);
+        // width: 25%;
+        color: grey;
+    }
+}
+
 // horizontal charts wrapper
 div.horizontal-wrapper {
     // content layout management
     @include flex($direction: row, $align: center, $justify: space-between);
-    @include box($width: 100%, $height: 50%, $padding: unset);
+    @include box($width: 100%, $height: 48.75%, $padding: 10px 0);
 
     // style overrides
-    margin-top: 10px;
+    position: relative;
 }
 
 // line chart wrapper div
@@ -192,13 +213,28 @@ div.radar-wrapper {
 div.radial-wrapper {
     // content layout management
     @include box($padding: unset, $backcolor: $color_background_secondary);
+}
 
-    // overlayed div layout
-    .overlay{
-        // content layout management
-        @include flex($justify: center);
-        @include box($width: 22.5%, $height: 22.5%, $padding: unset, $backcolor: $color_background_secondary);
+// radial overlayed div layout
+div.radial-overlay {
+    // content layout management
+    @include flex($justify: center);
+    // style overrides
+    position: absolute;
+    right: 0px;
+    
+    * {
         color: grey;
-        font-size: 15px;
+    }
+
+    > span:nth-of-type(1) {
+        position: absolute;
+        top: 25px;
+        left: 15px;
+    }
+    
+    > span:nth-of-type(2) strong {
+        font-size: 25px;
+        color: black;
     }
 }

@@ -4,22 +4,22 @@
 import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 
-import Hello from "./components/hello.jsx";
-import Stats from "./components/stats.jsx";
+import Hello from "./hello.jsx";
+import Stats from "./stats.jsx";
 
-import BarShart from "./charts/bar.jsx";
-import LineShart from "./charts/line.jsx";
-import RadarShart from "./charts/radar.jsx";
-import RadialBarShart from "./charts/radial.jsx";
+import BarShart from "./bar.jsx";
+import LineShart from "./line.jsx";
+import RadarShart from "./radar.jsx";
+import {RadialOverlay, RadialBarShart} from "./radial.jsx";
 
-import {getUserData} from "./helpers/api.js";
-import {UserActivity, UserSessions, UserPerformance, UserProfile} from "./helpers/models.js";
+import {getUserData} from "../helpers/api.js";
+import {UserActivity, UserSessions, UserPerformance, UserProfile} from "../helpers/models.js";
 
 const
     // react hook-based component rendering with async data
     // the above implies managing states for each asynchronously
     // retrieved piece of data ...
-    SportSee = props => {
+    Content = props => {
         const
             // component state is now managed variable by variable ...
             [ activity, setActivity ] = useState(null),
@@ -43,11 +43,13 @@ const
             <Hello data={ profile ? profile.format(`hello`) : {firstName: ``}} />
             <div>
                 {/* // condition component rendering on data being available */}
-                {activity ? <BarShart data={ activity.format() } height={`50%`} width={`100%`} /> : null}
+                {activity ? <BarShart data={ activity.format() } height={`48.75%`} width={`100%`} /> : null}
                 <div className="horizontal-wrapper">
-                    {sessions ? <LineShart data={ sessions.format() } height={`100%`} width={`33%`} /> : null}
-                    {performance ? <RadarShart data={ performance.format() } height={`100%`} width={`33%`} /> : null}
-                    {profile ? <RadialBarShart data={ profile.format(`radial`)} height={`100%`} width={`33%`} /> : null}
+                    {sessions ? <LineShart data={ sessions.format() } height={`100%`} width={`32.25%`} /> : null}
+                    {performance ? <RadarShart data={ performance.format() } height={`100%`} width={`32.25%`} /> : null}
+                    {/* overlayed div styling */}
+                    {profile ? <RadialOverlay percentage={ profile.format(`radial`).at(1).percentage } height={`100%`} width={`32.25%`} /> : null}
+                    {profile ? <RadialBarShart data={ profile.format(`radial`)} height={`100%`} width={`32.25%`} /> : null}
                 </div>
             </div>
             <Stats data={ profile ? profile.format(`stats`) : {keyData: {}}} />
@@ -55,9 +57,9 @@ const
     };
 
 // define prop types ...
-SportSee.propTypes = {
+Content.propTypes = {
     // user id : number required
     user: PropTypes.number.isRequired
 };
 
-export default SportSee;
+export default Content;

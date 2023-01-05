@@ -1,13 +1,13 @@
 // import modules
 import PropTypes from "prop-types";
-import Thumbnail from "../js/components/thumbnail.jsx";
+import Thumbnail from "./thumbnail.jsx";
 
 // import assets
-import logo from "../img/logo-sportsee.png";
-import sitting from "../img/sitting.svg";
-import swimming from "../img/swimming.svg";
-import cycling from "../img/cycling.svg";
-import lifting from "../img/lifting.svg";
+import logo from "../../img/logo-sportsee.png";
+import sitting from "../../img/sitting.svg";
+import swimming from "../../img/swimming.svg";
+import cycling from "../../img/cycling.svg";
+import lifting from "../../img/lifting.svg";
 
 const
     // sample hook-based stuff
@@ -52,8 +52,8 @@ const
 
 // define prop types ...
 Layout.propTypes = {
-    // content : any required
-    content: PropTypes.any.isRequired
+    // content : react element required
+    content: PropTypes.element.isRequired
 };
 
 export default Layout;

@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 
 const
-    // sample hook-based stuff
+    // thumbnail hook-based component
     Thumbnail = props => {
         const
             // destructure props

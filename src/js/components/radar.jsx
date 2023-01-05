@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis} from "recharts";
 
 const
-    // sample hook-based radar chart
+    // radar chart hook-based component
     RadarShart = props => {
         const
             // destructure props

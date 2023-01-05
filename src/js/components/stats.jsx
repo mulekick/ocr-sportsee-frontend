@@ -9,7 +9,7 @@ import sugar from "../../img/sugar.svg";
 import fat from "../../img/fat.svg";
 
 const
-    // sample hook-based stuff
+    // user stats hook-based component
     Stats = props => {
         const
             // destructure props
@@ -53,14 +53,14 @@ const
 
 // define prop types ...
 Stats.propTypes = {
-    // keyData : object shape required
+    // keyData : object shape optional (only available once data is loaded)
     keyData: PropTypes.shape({
         // calorieCount / proteinCount / carbohydrateCount / lipidCount : number required
         calorieCount: PropTypes.number.isRequired,
         proteinCount: PropTypes.number.isRequired,
         carbohydrateCount: PropTypes.number.isRequired,
         lipidCount: PropTypes.number.isRequired
-    }).isRequired
+    })
 };
 
 export default Stats;

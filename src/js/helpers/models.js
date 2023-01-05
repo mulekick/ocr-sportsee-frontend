@@ -73,7 +73,7 @@ const
         constructor(d) {
             const
                 // destructure data and account for inconsistencies
-                {id, userInfos: {firstName}, todayScore, score, keyData} = d;
+                {userInfos: {firstName}, todayScore, score, keyData} = d;
             // flatten data for consumption by components
             this.firstName = firstName;
             this.score = todayScore || score;

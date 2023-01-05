@@ -1,17 +1,21 @@
 import PropTypes from "prop-types";
-import {ResponsiveContainer, Legend, RadialBarChart, RadialBar} from "recharts";
+import {ResponsiveContainer, RadialBarChart, RadialBar} from "recharts";
 
 const
-    // legend component
-    Score = props => {
-        const {percentage} = props;
-        return <div className="overlay">
-            <span style={{color: `black`, fontSize: `24px`}}><strong>{ percentage }%</strong></span>
+    // radial chart overlay hook-based component
+    RadialOverlay = props => {
+        const
+            // destructure props
+            {percentage, height, width} = props;
+
+        return <div className="radial-overlay" style={{height: height, width: width}}>
+            <span><strong>Score</strong></span>
+            <span><strong>{ percentage }%</strong></span>
             <span>de votre</span>
             <span>objectif</span>
         </div>;
     },
-    // sample hook-based stuff
+    // radial chart hook-based component
     RadialBarShart = props => {
         const
             // destructure props
@@ -20,7 +24,6 @@ const
         // wrapper div styling
         return <ResponsiveContainer className="radial-wrapper" width={width} height={height}>
             <RadialBarChart cx="50%" cy="50%" innerRadius="65%" outerRadius="100%" barSize={15} data={data} startAngle={90} endAngle={450}>
-                <Legend wrapperStyle={{left: `37.5%`, top: `37.5%`}} content={<Score percentage={ data.at(1).percentage } />} />
                 <RadialBar background={false} clockWise dataKey="percentage" cornerRadius={15}/>
             </RadialBarChart>
         </ResponsiveContainer>;
@@ -28,9 +31,12 @@ const
 
 
 // define prop types ...
-Score.propTypes = {
+RadialOverlay.propTypes = {
     // percentage : number required
-    percentage: PropTypes.number.isRequired
+    percentage: PropTypes.number.isRequired,
+    // height / width : number required
+    height: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired
 };
 
 // define prop types ...
@@ -48,4 +54,4 @@ RadialBarShart.propTypes = {
     width: PropTypes.string.isRequired
 };
 
-export default RadialBarShart;
+export {RadialOverlay, RadialBarShart};

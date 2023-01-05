@@ -1,25 +1,30 @@
 import PropTypes from "prop-types";
-import {ResponsiveContainer, Legend, LineChart, Line, XAxis, Tooltip} from "recharts";
+import {ResponsiveContainer, Legend, LineChart, Line, XAxis, YAxis, Tooltip} from "recharts";
 
 const
     // x-axis tooltip hook-based component
     XToolTip = props => {
         const
-            // desctructure props
+            // destructure props
             {active, payload} = props;
 
+        // tooltip div styling
         return active && payload && payload.length ?
             <div>{`${ payload.at(0).value } min`}</div> :
             null;
     },
-    // legend component
+    // legend hook-based component
     Duration = props => {
-        const {a} = props;
+        const
+            // destructure props
+            {nul} = props;
+
+        // title div styling
         return <span>
             <strong>Durée moyenne des<br />sessions</strong>
         </span>;
     },
-    // sample hook-based stuff
+    // line chart hook-based component
     LineShart = props => {
         const
             // destructure props
@@ -27,10 +32,12 @@ const
 
         // wrapper div styling
         return <ResponsiveContainer className="line-wrapper" width={width} height={height}>
-            <LineChart data={data} margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+            <LineChart data={data} margin={{top: 0, right: 30, left: -20, bottom: 0}}>
                 <XAxis stroke="lightgrey" dataKey="day" axisLine={false} tickLine={false} />
+                {/* declare a hidden Y axis in order to restrict the domain ... */}
+                <YAxis style={{display: `none`}} dataKey="sessionLength" domain={[ `dataMin - 25`, `dataMax + 25` ]} />
                 <Tooltip content={<XToolTip />} wrapperStyle={{padding: `10px`, backgroundColor: `lightgrey`, color: `black`}} />
-                <Legend wrapperStyle={{top: `10px`, left: `10px`}} content={<Duration />} />
+                <Legend wrapperStyle={{top: `15px`, left: `15px`}} content={<Duration />} />
                 <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" strokeWidth={3} dot={false} />
             </LineChart>
         </ResponsiveContainer>;
