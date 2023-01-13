@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d701e2eb.css",
+    "main.js": "/static/js/main.f6569add.js",
+    "static/media/logo-sportsee.png": "/static/media/logo-sportsee.231a6da56bd8a5133afa.png",
+    "static/media/swimming.svg": "/static/media/swimming.bc12b705d445672f550a8441d581c700.svg",
+    "static/media/cycling.svg": "/static/media/cycling.fe885ecda828d3e2f637bb3b675db76c.svg",
+    "static/media/sugar.svg": "/static/media/sugar.95581ba1b204199334e122af4784ab16.svg",
+    "static/media/protein.svg": "/static/media/protein.ffbc3b88a759c706993bb26fbd66113b.svg",
+    "static/media/sitting.svg": "/static/media/sitting.76760efccddf14928ee9263744c1b6e6.svg",
+    "static/media/fat.svg": "/static/media/fat.18f60e0efe37e86bcac036d673f0bab0.svg",
+    "static/media/calories.svg": "/static/media/calories.25fef86ed5860200bdf90f9cd185e1e3.svg",
+    "index.html": "/index.html",
+    "static/media/lifting.svg": "/static/media/lifting.9d22814b98d0ca386d9ddacded4eae80.svg",
+    "main.d701e2eb.css.map": "/static/css/main.d701e2eb.css.map",
+    "main.f6569add.js.map": "/static/js/main.f6569add.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d701e2eb.css",
+    "static/js/main.f6569add.js"
+  ]
+}
