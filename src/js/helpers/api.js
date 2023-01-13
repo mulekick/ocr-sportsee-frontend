@@ -47,11 +47,15 @@ const
                 // declare variables
                 [ readable, data ] = [ null, null ];
 
-            if (process.env.NODE_ENV === `production`) {
+            // using custom environment variable instead of NODE_ENV for
+            // it cannot be manually overriden - the production build is
+            // the sole configuration in which the endpoints have to be used
+            if (process.env.REACT_APP_BUILD === `production`) {
                 // retrieve user data from endpoints
                 readable = await fetch(endpoints[request].replace(/€\{userId\}/u, user), {method: `GET`});
                 // eslint-disable-next-line prefer-destructuring
                 data = (await readable.json()).data;
+            // REACT_APP_BUILD is ghpages or we're in dev mode ...
             } else {
                 // retrieve user data from mocks
                 readable = await fetch(mocks[request], {method: `GET`});
