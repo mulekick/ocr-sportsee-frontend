@@ -12,10 +12,10 @@ const
      * @description mock data files
      */
     mocks = {
-        profile: `/data/mock.users.list.json`,
-        activity: `/data/mock.users.activity.json`,
-        sessions: `/data/mock.users.sessions.json`,
-        performance: `/data/mock.users.performance.json`
+        profile: `/ocr-sportsee-frontend/data/mock.users.list.json`,
+        activity: `/ocr-sportsee-frontend/data/mock.users.activity.json`,
+        sessions: `/ocr-sportsee-frontend/data/mock.users.sessions.json`,
+        performance: `/ocr-sportsee-frontend/data/mock.users.performance.json`
     },
     /**
      * @constant
