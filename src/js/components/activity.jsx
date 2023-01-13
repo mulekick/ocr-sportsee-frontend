@@ -17,9 +17,9 @@ const
         return <div className="bar-header">
             <span><strong>Activité quotidienne</strong></span>
             <div>
-                <span><span className="dot" style={{backgroundColor: `red`}}></span>&nbsp;&nbsp;Poids (kg)</span>
+                <span><span className="dot" style={{backgroundColor: `black`}}></span>&nbsp;&nbsp;Poids (kg)</span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><span className="dot" style={{backgroundColor: `black`}}></span>&nbsp;&nbsp;Calories brûlées (kCal)</span>
+                <span><span className="dot" style={{backgroundColor: `red`}}></span>&nbsp;&nbsp;Calories brûlées (kCal)</span>
             </div>
         </div>;
     },
