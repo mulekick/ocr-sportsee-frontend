@@ -2,10 +2,11 @@
 @import "mixins";
 
 body {
-    max-width: 2048px;
-    min-width: 1024px;
+    height: 100vh;
     min-height: 780px;
-    margin: 0;
+    max-width: 1748px;
+    min-width: 1024px;
+    margin: auto;
 }
 
 /* ========== GENERAL STYLES ========== */
@@ -34,7 +35,14 @@ header {
 main {
     // content layout management
     @include flex($direction: row);
-    @include box($height: 700px, $padding: unset, $backcolor: unset, $radius: 0px);
+
+    // !!!
+    // @include box($height: 700px, $padding: unset, $backcolor: unset, $radius: 0px);
+    @include box($height: calc(100vh - 80px), $padding: unset, $backcolor: unset, $radius: 0px);
+    min-height: 700px;
+    max-height: 1080px;
+
+    
 }
 
 div.container {
@@ -52,7 +60,10 @@ div.thumbnail {
 div.left {
     // content layout management
     @include flex($align: center, $justify: space-around);
-    @include box($width: 80px, $height: 700px, $padding: unset, $backcolor: #000000, $radius: 0px);
+
+    // !!!
+    // @include box($width: 80px, $height: 700px, $padding: unset, $backcolor: #000000, $radius: 0px);
+    @include box($width: 80px, $height: 100%, $padding: unset, $backcolor: #000000, $radius: 0px);
 
     ul {
         // style overrides
@@ -75,7 +86,12 @@ div.left {
 div.content {
     // content layout management
     @include flex($direction: row);
-    @include box($width: calc(100% - 80px), $height: 700px, $padding: 09px 75px, $radius: 0px);
+
+    // !!!
+    // @include box($width: calc(100% - 80px), $height: 700px, $padding: 09px 75px, $radius: 0px);
+    @include box($width: calc(100% - 80px), $height: 100%, $padding: 09px 75px, $radius: 0px);
+
+
     // style overrides
     flex-wrap: wrap;
     
