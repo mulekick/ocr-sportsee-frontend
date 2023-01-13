@@ -22,10 +22,10 @@ const
                 {/* logo */}
                 <img src={ logo } alt="logo" />
                 {/* top menu */}
-                <a href="/">Accueil</a>
-                <a href="/">Profil</a>
-                <a href="/">Réglage</a>
-                <a href="/">Communauté</a>
+                <a href="./">Accueil</a>
+                <a href="./">Profil</a>
+                <a href="./">Réglage</a>
+                <a href="./">Communauté</a>
             </header>
             <main>
                 {/* left menu */}
@@ -33,10 +33,10 @@ const
                     <nav>
                         {/* thumbnails */}
                         <ul>
-                            <li><a href="/"><Thumbnail bg={ `#ffffff` } src={ sitting } alt={ sitting } /></a></li>
-                            <li><a href="/"><Thumbnail bg={ `#ffffff` } src={ swimming } alt={ swimming } /></a></li>
-                            <li><a href="/"><Thumbnail bg={ `#ffffff` } src={ cycling } alt ={ cycling } /></a></li>
-                            <li><a href="/"><Thumbnail bg={ `#ffffff` } src={ lifting } alt ={ lifting } /></a></li>
+                            <li><a href="./"><Thumbnail bg={ `#ffffff` } src={ sitting } alt={ sitting } /></a></li>
+                            <li><a href="./"><Thumbnail bg={ `#ffffff` } src={ swimming } alt={ swimming } /></a></li>
+                            <li><a href="./"><Thumbnail bg={ `#ffffff` } src={ cycling } alt ={ cycling } /></a></li>
+                            <li><a href="./"><Thumbnail bg={ `#ffffff` } src={ lifting } alt ={ lifting } /></a></li>
                         </ul>
                     </nav>
                     {/* copyright */}
