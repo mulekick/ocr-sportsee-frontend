@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ocr-sportsee-frontend/static/css/main.d701e2eb.css",
-    "main.js": "/ocr-sportsee-frontend/static/js/main.072e69d6.js",
+    "main.js": "/ocr-sportsee-frontend/static/js/main.17c894fc.js",
     "static/media/logo-sportsee.png": "/ocr-sportsee-frontend/static/media/logo-sportsee.231a6da56bd8a5133afa.png",
     "static/media/swimming.svg": "/ocr-sportsee-frontend/static/media/swimming.bc12b705d445672f550a8441d581c700.svg",
     "static/media/cycling.svg": "/ocr-sportsee-frontend/static/media/cycling.fe885ecda828d3e2f637bb3b675db76c.svg",
@@ -13,10 +13,10 @@
     "static/media/calories.svg": "/ocr-sportsee-frontend/static/media/calories.25fef86ed5860200bdf90f9cd185e1e3.svg",
     "static/media/lifting.svg": "/ocr-sportsee-frontend/static/media/lifting.9d22814b98d0ca386d9ddacded4eae80.svg",
     "main.d701e2eb.css.map": "/ocr-sportsee-frontend/static/css/main.d701e2eb.css.map",
-    "main.072e69d6.js.map": "/ocr-sportsee-frontend/static/js/main.072e69d6.js.map"
+    "main.17c894fc.js.map": "/ocr-sportsee-frontend/static/js/main.17c894fc.js.map"
   },
   "entrypoints": [
     "static/css/main.d701e2eb.css",
-    "static/js/main.072e69d6.js"
+    "static/js/main.17c894fc.js"
   ]
 }
