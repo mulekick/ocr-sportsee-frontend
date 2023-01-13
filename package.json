@@ -46,5 +46,6 @@
     "author": "mulekick <moolekick@gmail.com> (https://github.com/mulekick)",
     "license": "MIT",
     "repository": {},
-    "bugs": {}
+    "bugs": {},
+    "homepage": "https://mulekick.github.io/ocr-sportsee-frontend/"
 }
