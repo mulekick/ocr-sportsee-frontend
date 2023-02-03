@@ -1,5 +1,10 @@
 /* eslint-disable no-shadow */
 
+/**
+ * module that exports the page main contents component
+ * @module components/content
+ */
+
 // import modules
 import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
@@ -27,6 +32,10 @@ const
             [ performance, setPerformance ] = useState(null),
             [ profile, setProfile ] = useState(null);
 
+        /**
+         * react hook that initiates data requests for the current user
+         * @function useEffect
+         */
         useEffect(() => {
             // trigger data retrieval, pass state update handler and data model class
             getUserData(props.user, `activity`, setActivity, UserActivity);

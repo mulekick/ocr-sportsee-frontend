@@ -1,3 +1,8 @@
+/**
+ * module that exports the page title component
+ * @module components/hello
+ */
+
 // import modules
 import PropTypes from "prop-types";
 

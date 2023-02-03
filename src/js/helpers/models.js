@@ -4,14 +4,10 @@
  * @module helpers/models
  */
 
-
-/**
- * @name UserActivity
- * @description class for modelization of the user activity API data
- */
+/** class for modelization of the user activity API data */
 class UserActivity {
     /**
-     * @constructor
+     * data modelization class for activity component
      * @param {Object} d - data returned from the user activity API
      */
     constructor(d) {
@@ -27,8 +23,6 @@ class UserActivity {
 
     /**
      * data formatting method
-     * @function format
-     * @memberof UserActivity
      * @return {Object} - an object ready for consumption by the component
      */
     format() {
@@ -40,13 +34,10 @@ class UserActivity {
     }
 }
 
-/**
- * @name UserSessions
- * @description class for modelization of the user sessions API data
- */
+/** class for modelization of the user sessions API data */
 class UserSessions {
     /**
-     * @constructor
+     * data modelization class for sessions component
      * @param {Object} d - data returned from the user sessions API
      */
     constructor(d) {
@@ -62,7 +53,6 @@ class UserSessions {
 
     /**
      * data formatting method
-     * @function format
      * @return {Object} - an object ready for consumption by the component
      */
     format() {
@@ -73,13 +63,10 @@ class UserSessions {
     }
 }
 
-/**
- * @name UserPerformance
- * @description class for modelization of the user performance API data
- */
+/** class for modelization of the user performance API data */
 class UserPerformance {
     /**
-     * @constructor
+     * data modelization class for performance component
      * @param {Object} d - data returned from the user performance API
      */
     constructor(d) {
@@ -96,7 +83,6 @@ class UserPerformance {
 
     /**
      * data formatting method
-     * @function format
      * @return {Object} - an object ready for consumption by the component
      */
     format() {
@@ -107,13 +93,10 @@ class UserPerformance {
     }
 }
 
-/**
- * @name UserProfile
- * @description class for modelization of the user profile API data
- */
+/** class for modelization of the user profile API data */
 class UserProfile {
     /**
-     * @constructor
+     * data modelization class for profile component
      * @param {Object} d - data returned from the user profile API
      */
     constructor(d) {
@@ -128,7 +111,6 @@ class UserProfile {
 
     /**
      * data formatting method (recharts expects the SVG fill as part of the data ...)
-     * @function format
      * @param {string} f - the required format depending on the targeted component
      * @return {Object} - an object ready for consumption by the component
      */

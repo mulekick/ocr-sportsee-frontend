@@ -6,6 +6,8 @@
  */
 
 const
+    // it does
+    jsDocRequiresThisBsOrMocksRNotdDocumented = null,
     /**
      * @constant
      * @name mocks
@@ -20,7 +22,7 @@ const
     /**
      * @constant
      * @name endpoints
-     * @description data api endpuints
+     * @description data api endpoints
      */
     endpoints = {
         profile: `http://192.168.1.12:3000/user/€{userId}`,

@@ -1,6 +1,6 @@
 /**
  * module that exports the thumbnail component
- * @module components/score
+ * @module components/thumbnail
  */
 
 // import modules

@@ -1,3 +1,8 @@
+/**
+ * module that exports the page layout component
+ * @module components/layout
+ */
+
 // import modules
 import PropTypes from "prop-types";
 import Thumbnail from "./thumbnail.jsx";

@@ -1,6 +1,6 @@
 /**
  * module that exports the user stats display component
- * @module components/score
+ * @module components/stats
  */
 
 // import modules
